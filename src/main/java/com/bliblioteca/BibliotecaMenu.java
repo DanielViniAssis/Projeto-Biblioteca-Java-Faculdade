@@ -10,13 +10,13 @@ public class BibliotecaMenu {
 
         do {
             System.out.println("---------------- Biblioteca ----------------");
-            System.out.println("Escolha a sua opção: ");
             System.out.println("1. Cadastrar Livro");
             System.out.println("2. Listar Livros");
             System.out.println("3. Emprestimo de Livro");
             System.out.println("4. Devolver Livro");
             System.out.println("5. Sair");
-
+            System.out.println("Escolha a sua opção: ");
+            
             if (!leitura.hasNextInt()) {
                 leitura.next();
                 System.out.println("Digite um valor válido!");
@@ -28,7 +28,7 @@ public class BibliotecaMenu {
                     System.out.println("Digite um valor válido!");
                     leitura.next();
                 }
-
+                
                 switch (opcao) {
                     case 1:
                         UserLivro.UserCadastra(repositorio);
@@ -58,4 +58,5 @@ public class BibliotecaMenu {
 
         leitura.close();
     }
+    
 }

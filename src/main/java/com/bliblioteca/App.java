@@ -6,9 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import javax.naming.spi.DirStateFactory.Result;
-import javax.swing.plaf.nimbus.State;
-
 public class App 
 {
     public static void main( String[] args )
