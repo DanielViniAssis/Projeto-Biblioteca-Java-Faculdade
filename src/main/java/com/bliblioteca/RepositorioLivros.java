@@ -7,16 +7,16 @@ import java.sql.SQLException;
 public class RepositorioLivros {
     public static void cadastrarLivro(Livro livro) {
         String sql = "INSERT INTO livros (titulo, autor, paginas, ano_de_lancamento, emprestado) VALUES (?, ?, ?, ?, ?)";
-
+    
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
-
+    
             statement.setString(1, livro.getTitulo());
             statement.setString(2, livro.getAutor());
             statement.setInt(3, livro.getPaginas());
             statement.setInt(4, livro.getAnoDeLancamento());
             statement.setBoolean(5, livro.isEmprestado());
-
+    
             int rowsAffected = statement.executeUpdate();
             if (rowsAffected > 0) {
                 System.out.println("Livro cadastrado com sucesso!");

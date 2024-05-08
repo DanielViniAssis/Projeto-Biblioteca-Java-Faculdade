@@ -20,11 +20,12 @@ public class DatabaseConnection {
             
                 try (Statement statement = conn.createStatement()) {
                     String sql = "CREATE TABLE IF NOT EXISTS livros ("
-                            + "id INTEGER PRIMARY KEY,"
+                            + "id SERIAL PRIMARY KEY,"
                             + "titulo VARCHAR,"
                             + "autor VARCHAR,"
                             + "paginas INTEGER,"
-                            + "ano_de_lancamento DATE"
+                            + "ano_de_lancamento INTEGER,"
+                            + "emprestado BOOLEAN DEFAULT FALSE"
                             + ")";
                     statement.execute(sql);
                     
